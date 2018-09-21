@@ -1,0 +1,40 @@
+#lang racket
+;;;Assignment #2
+;;;Author: Diana Rachvak
+;;;Class: CISC 3140
+;;;Professor: M.Gross
+
+
+;;Program 'calculator' that allows to pass
+;;functions by names as they are regular variables
+
+
+;'square' function sqares a number
+(define (square x)
+  (* x x))
+
+;'divide' function divides 2 numbers
+;this function checks if divisor is 0-
+;if it is- it prints an error message
+(define (divide x y)
+  (if (= y 0) (printf "Cannot divide by 0") (/ x y)))
+
+;'add' function adds 2 numbers and returns their sum
+(define (add x y)
+  (+ x y))
+
+;'subtract' function subtracts 2 numbers
+;first, it check if the1st number is smaller than 2nd
+;if it is- it swaps 2 numbers to avoid negative output
+;(if both numbers are negative- returns larger sum of two)
+(define (subtract x y)
+  (if (< x y) (- y x) (- x y)))
+
+;'multiply' function multiplies 2 numbers
+(define (multiply x y)
+  (* x y))
+
+;'moduloFunct' function calculates modulo of 2 numbers
+;if one of the numbers or both are 0, returns 0
+(define (moduloFunc x y)
+  (if (or (= x 0) (= y 0)) 0 (modulo x y)))
